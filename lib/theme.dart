@@ -48,7 +48,20 @@ class AppTheme {
     bodyText1: _darkThemeBodyeTextStyle,
   );
 
+  static final InputDecorationTheme _inputDecorationTheme =
+      InputDecorationTheme(
+    floatingLabelStyle: const TextStyle(color: Colors.white),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: const BorderSide(color: Colors.white),
+    ),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+  );
+
   static final ThemeData lightTheme = ThemeData(
+      inputDecorationTheme: _inputDecorationTheme,
       scaffoldBackgroundColor: _lightPrimaryColor,
       appBarTheme: const AppBarTheme(
           color: _appbarColorLight,
@@ -62,6 +75,7 @@ class AppTheme {
       textTheme: _lightTextTheme);
 
   static final ThemeData darkTheme = ThemeData(
+      inputDecorationTheme: _inputDecorationTheme,
       scaffoldBackgroundColor: _darkPrimaryColor,
       appBarTheme: AppBarTheme(
           color: _appbarColorDark,

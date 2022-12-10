@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/presentation/signup/signup_page.dart';
 import 'package:todo/theme.dart';
 
 void main() {
@@ -12,9 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Todo Lists',
-      theme: AppTheme.darkTheme,
-      home: Placeholder(),
+      debugShowCheckedModeBanner: false,
+      title: 'Todo List',
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.dark,
+      home: SignUpPage(),
     );
   }
 }
