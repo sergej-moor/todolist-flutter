@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo/application/auth/signupform/sign_up_form_bloc.dart';
+import 'package:todo/injection.dart';
 import 'package:todo/presentation/signup/widgets/signup_form.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -7,7 +10,10 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SignUpForm(),
+      body: BlocProvider(
+        create: (context) => sl<SignUpFormBloc>(),
+        child: SignUpForm(),
+      ),
     );
   }
 }
